@@ -1,0 +1,9 @@
+<script tpye="text/javascript">
+  const eventSource = new EventSource('/api/event'); //라우트
+
+  eventSource.onmessage = ({ data }) => {
+    const message = document.createElement('li');
+    message.innerText = data;
+    document.body.appendChild(message);
+  };
+</script>
